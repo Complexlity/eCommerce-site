@@ -1,7 +1,7 @@
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from "./store/counterSlice"
+import { decrement, increment, incrementByAmount, decrementByAmount } from "./store/counterSlice"
 import type { RootState } from './store/index.js'
 
 
@@ -25,6 +25,8 @@ function App() {
           Decrement
         </button>
         <div className="mt-10">{count}</div>
+        <div className="mt-8"><button onClick={() => dispatch(incrementByAmount(10))}>Increment by 10</button></div>
+        <div className="mt-8"><button onClick={() => dispatch(decrementByAmount(10))}>Decrement by 10</button></div>
     </div>
   )
 }

@@ -1,0 +1,25 @@
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { ShopItem } from '../interfaces'
+import shop from './shop'
+
+const initialState: ShopItem[] = []
+
+export const cartsSlice = createSlice({
+    name: 'cartItems',
+    initialState,
+    reducers: {
+        addItem: (state: ShopItem[], action: PayloadAction<ShopItem>) => {
+            let newItem: ShopItem[];
+            const shopItem = state.find(item => action.payload.id == item.id)
+            if (shopItem) {
+                shopItem.price! += 1
+            }
+            else state.push(action.payload)
+        }
+    }
+})
+
+
+export const { addItem } = cartsSlice.actions
+export default cartsSlice.reducer

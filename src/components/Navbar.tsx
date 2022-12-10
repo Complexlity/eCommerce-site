@@ -10,13 +10,11 @@ const Navbar = () => {
       <li className="h-full bg-green-700 py-2 px-2 hover:bg-green-400 hover:text-gray-200">
         <Link to={"/"}>Home</Link>
       </li>
-      <li className="h-full bg-green-700 py-2 px-2 hover:bg-green-400 hover:text-gray-200">
+      <li className="h-full bg-green-700 py-2  px-2 hover:bg-green-400 hover:text-gray-200">
         <Link to={"/products"}>Products</Link>
       </li>
-      <li className="h-full bg-green-700 py-2 px-2 hover:bg-green-400 hover:text-gray-200">
-        <Link to={"/contact"} className="h-full">
-          Contact
-        </Link>
+      <li className="h-full bg-green-700 py-2  px-2 hover:bg-green-400 hover:text-gray-200">
+        <Link to={"/contact"}>Contact</Link>
       </li>
       <li className="ml-2 h-full">
         <div className="relative grid  items-center justify-center rounded-full bg-blue-500 p-1 hover:scale-[110%]">

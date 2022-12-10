@@ -7,38 +7,38 @@ const initialState: ShopItem[] = [
     {
         name: 'firstItem',
         id: 1,
-        price: 0,
+        price: 100,
         image: '../src/assets/longSleeve.jpg'
     }, {
         name: 'secondItem',
         id: 2,
-        price: 0,
+        price: 100,
         image: '../src/assets/longSleeve.jpg'
     }, {
         name: 'thirdItem',
         id: 3,
-        price: 0,
+        price: 100,
         image: '../src/assets/longSleeve.jpg'
     }, {
         name: 'fourtItem',
         id: 4,
-        price: 0,
+        price: 100,
         image: '../src/assets/longSleeve.jpg'
     }, {
         name: 'fifthItem',
         id: 5,
-        price: 0,
+        price: 100,
         image: '../src/assets/longSleeve.jpg'
     }, {
         name: 'sixthItemm',
         id: 6,
-        price: 0,
+        price: 100,
         image: '../src/assets/longSleeve.jpg'
     },
     {
         name: 'seventhItem',
         id: 7,
-        price: 0,
+        price: 100,
         image: '../src/assets/longSleeve.jpg'
     },
 ]

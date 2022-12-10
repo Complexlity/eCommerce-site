@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/index.js";
 import { addItem } from "../store/cart.js";
-import { increment } from "../store/counterSlice.js";
+import { increment, incrementPrice } from "../store/counterSlice.js";
 import { store } from "../store/index.js";
 
 interface Props {
@@ -16,6 +16,9 @@ interface Props {
 
 const Button: FC<Props> = ({ color, rounding, width, name, id, price }) => {
   const itemsList = useSelector((state: RootState) => state.cartList);
+  const totalPrice = useSelector(
+    (state: RootState) => state.counter.totalPrice
+  );
   const dispatch = useDispatch();
   const newItem = { name: name, id: id, price: price };
   // console.log(name);
@@ -33,6 +36,7 @@ const Button: FC<Props> = ({ color, rounding, width, name, id, price }) => {
       onClick={() => {
         dispatch(addItem(newItem));
         dispatch(increment());
+        dispatch(incrementPrice(newItem.price));
       }}
     >
       Add To Cart

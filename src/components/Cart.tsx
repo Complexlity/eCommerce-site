@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/index.js";
 import { toggleOverlay } from "../store/overlay";
+import { incrementPrice, decrementPrice } from "../store/counterSlice.js";
 import { GrClose } from "react-icons/gr";
 import CartItems from "./CartItems.js";
 
@@ -9,6 +10,9 @@ interface Props {}
 
 const Cart: FC<Props> = () => {
   const overlay = useSelector((state: RootState) => state.overlay);
+  const totalPrice = useSelector(
+    (state: RootState) => state.counter.totalPrice
+  );
   const dispatch = useDispatch();
   return (
     <>
@@ -25,7 +29,7 @@ const Cart: FC<Props> = () => {
             <div className="mt-4">
               <h1>Your Shopping Cart</h1>
               <CartItems />
-              <p>Total: $100.00</p>
+              <p>Total: ${totalPrice}</p>
               <button className="rounded-[5px] bg-orange-800 px-4 py-2 text-white">
                 Checkout
               </button>

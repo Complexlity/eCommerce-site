@@ -7,9 +7,7 @@ export const overlaySlice = createSlice({
     initialState,
     reducers: {
         toggleOverlay: ((state: boolean) => {
-            console.log(state)
             return !state
-
         })
     }
 })

@@ -2,7 +2,6 @@ import { FC } from "react";
 import Card from "./Card";
 import type { RootState } from "../store/index.js";
 import { useSelector } from "react-redux";
-import { Root } from "react-dom/client";
 
 interface Props {}
 

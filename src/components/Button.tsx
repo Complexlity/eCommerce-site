@@ -4,6 +4,7 @@ import type { RootState } from "../store/index.js";
 import { addItem } from "../store/cart.js";
 import { increment, incrementPrice } from "../store/counterSlice.js";
 import { store } from "../store/index.js";
+import { ShopItem } from "../interfaces.js";
 
 interface Props {
   color: string;
@@ -20,9 +21,13 @@ const Button: FC<Props> = ({ color, rounding, width, name, id, price }) => {
     (state: RootState) => state.counter.totalPrice
   );
   const dispatch = useDispatch();
-  const newItem = { name: name, id: id, price: price };
-  // console.log(name);
-  // console.log(id);
+  const newItem: ShopItem = { name: name, id: id, price: price };
+
+  function addToCart(item: ShopItem): void {
+    dispatch(addItem(item));
+    dispatch(increment());
+    dispatch(incrementPrice(item.price!));
+  }
 
   const style: any = {
     backgroundColor: color,
@@ -34,9 +39,7 @@ const Button: FC<Props> = ({ color, rounding, width, name, id, price }) => {
       style={style}
       className="py-2  text-center hover:text-white hover:opacity-[80%]"
       onClick={() => {
-        dispatch(addItem(newItem));
-        dispatch(increment());
-        dispatch(incrementPrice(newItem.price));
+        addToCart(newItem);
       }}
     >
       Add To Cart

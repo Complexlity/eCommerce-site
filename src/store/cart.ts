@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { ShopItem } from '../interfaces'
+import shop from './shop'
 
 
 
@@ -11,20 +12,23 @@ export const cartsSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state: ShopItem[], action: PayloadAction<ShopItem>) => {
-            let newItem: ShopItem[];
-            const shopItem = state.find(item => action.payload.id == item.id)
+            const shopItem = state.find(item => action.payload.id === item.id)
             if (shopItem) {
                 shopItem.count! += 1
             }
             else state.push({ ...action.payload, count: 1 })
         },
-        addToCart: (state: ShopItem[], action: PayloadAction<number>) => {
-            const shopItem = state.find(item => action.payload == item.id)!
-            shopItem.count! += 1
+        removeItem: (state: ShopItem[], action: PayloadAction<ShopItem>) => {
+            const shopItem = state.find(item => action.payload.id === item.id)
+            if (shopItem && shopItem.count! > 1) shopItem.count! -= 1
+            else return state.filter(item => item.id !== action.payload.id)
+
+
         }
+
     }
 })
 
 
-export const { addItem, addToCart } = cartsSlice.actions
+export const { addItem, removeItem } = cartsSlice.actions
 export default cartsSlice.reducer

@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import CartReducer from './cart.js'
 import CounterReducer from './counterSlice.js'
 import ShopItems from './shop.js'
+import Overlay from './overlay.js'
 export const store = configureStore({
   reducer: {
     counter: CounterReducer,
     cartList: CartReducer,
-    itemsList: ShopItems
+    itemsList: ShopItems,
+    overlay: Overlay
   },
 })
 

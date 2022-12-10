@@ -13,9 +13,9 @@ export const cartsSlice = createSlice({
             let newItem: ShopItem[];
             const shopItem = state.find(item => action.payload.id == item.id)
             if (shopItem) {
-                shopItem.price! += 1
+                shopItem.count! += 1
             }
-            else state.push(action.payload)
+            else state.push({ ...action.payload, count: 1 })
         }
     }
 })

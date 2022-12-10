@@ -3,6 +3,7 @@ export interface ShopItem {
     id: number,
     price?: number
     image?: string
+    count?: number
 }
 
 

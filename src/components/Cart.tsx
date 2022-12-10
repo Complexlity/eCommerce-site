@@ -13,7 +13,14 @@ const Cart: FC<Props> = () => {
   const totalPrice = useSelector(
     (state: RootState) => state.counter.totalPrice
   );
+
   const dispatch = useDispatch();
+
+  function alertUser() {
+    return totalPrice > 0
+      ? alert("Thanks For Shopping With Us!! 😁😚")
+      : alert("Buy something will you?");
+  }
   return (
     <>
       {overlay && (
@@ -30,7 +37,10 @@ const Cart: FC<Props> = () => {
               <h1>Your Shopping Cart</h1>
               <CartItems />
               <p>Total: ${totalPrice}</p>
-              <button className="rounded-[5px] bg-orange-800 px-4 py-2 text-white">
+              <button
+                onClick={alertUser}
+                className="rounded-[5px] bg-orange-800 px-4 py-2 text-white"
+              >
                 Checkout
               </button>
             </div>

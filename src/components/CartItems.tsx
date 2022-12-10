@@ -10,9 +10,7 @@ import {
 } from "../store/counterSlice.js";
 import longSleeve from "../assets/longSleeve.jpg";
 import { ShopItem } from "../interfaces.js";
-
-// interface Props {
-// }
+import { dividerClasses } from "@mui/material";
 
 interface Props {
   items: ShopItem;
@@ -20,12 +18,19 @@ interface Props {
 
 const CartItems: FC = () => {
   const cartItems = useSelector((state: RootState) => state.cartList);
+  const length = cartItems.length;
   return (
-    <ul className="mt-4 grid gap-4 p-2">
-      {cartItems.map((items) => {
-        return <Items key={items.id} items={items} />;
-      })}
-    </ul>
+    <>
+      {length == 0 ? (
+        <div className="h-[10rem]"></div>
+      ) : (
+        <ul className="mt-4 grid gap-4 p-2">
+          {cartItems.map((items) => {
+            return <Items key={items.id} items={items} />;
+          })}
+        </ul>
+      )}
+    </>
   );
 };
 

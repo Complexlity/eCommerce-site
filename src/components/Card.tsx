@@ -6,7 +6,7 @@ const Card: FC<ShopItem> = (props) => {
   const { title: name, id, image, price: price } = props;
   return (
     <div className="grid overflow-hidden rounded-md border-2 border-gray-400 dark:text-gray-200">
-      <div className=" h-[10rem] py-1 dark:bg-gray-400">
+      <div className=" h-[10rem] bg-gray-200 py-1 dark:bg-gray-400">
         <img
           className="mx-auto h-full object-contain"
           src={`./src/assets/${image}`}

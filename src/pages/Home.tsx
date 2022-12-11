@@ -17,7 +17,8 @@ const Home = () => {
           </h1>
           <p className="text-2xl italic dark:text-gray-200">
             We Sell Quality And Variety.
-            <br /> Shop with us or else..
+            <br /> Shop with us or else...
+            <span className="not-italic">🙂</span>
           </p>
           <div className="float-button">
             <Link to="/products">
@@ -43,12 +44,17 @@ export default Home;
 const TextContent: FC = () => {
   return (
     <>
-      <h1 className="mb-4 text-5xl font-bold tracking-tighter text-white md:text-6xl">
+      <h1 className="mb-4 text-5xl font-bold tracking-tighter text-white dark:text-gray-200 md:text-6xl">
         Welcome To{" "}
         <span className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
           Complexlity Shop
         </span>
       </h1>
+      <p className="text-2xl italic text-white">
+        We Sell Quality And Variety.
+        <br /> Shop with us or else...
+        <span className="not-italic">🙂</span>
+      </p>
       <Link to="/products">
         <div className="float-button mx-auto max-w-3xl">
           <Button variant="contained" size="large" endIcon={<SendIcon />}>

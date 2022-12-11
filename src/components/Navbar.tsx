@@ -42,7 +42,7 @@ const Navbar = () => {
       </ul>
       <div className="flex items-center gap-2 sm:gap-6">
         <div
-          className=" relative grid  items-center justify-center rounded-full p-1 hover:scale-[110%] dark:bg-blue-900 dark:text-white"
+          className=" relative grid  items-center justify-center rounded-full p-1 hover:scale-[110%]  dark:text-amber-100"
           onClick={() => dispatch(toggleOverlay())}
         >
           <Badge>

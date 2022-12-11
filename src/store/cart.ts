@@ -22,13 +22,14 @@ export const cartsSlice = createSlice({
             const shopItem = state.find(item => action.payload.id === item.id)
             if (shopItem && shopItem.count! > 1) shopItem.count! -= 1
             else return state.filter(item => item.id !== action.payload.id)
-
-
+        },
+        resetCart: (state: ShopItem[]) => {
+            return state = []
         }
 
     }
 })
 
 
-export const { addItem, removeItem } = cartsSlice.actions
+export const { addItem, removeItem, resetCart } = cartsSlice.actions
 export default cartsSlice.reducer

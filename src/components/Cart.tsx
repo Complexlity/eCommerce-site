@@ -3,12 +3,15 @@ import type { RootState } from "../store/index.js";
 import { toggleOverlay } from "../store/overlay";
 import { GrClose } from "react-icons/gr";
 import CartItems from "./CartItems.js";
+import { resetCart } from "../store/cart.js";
+import { resetAll } from "../store/counterSlice.js";
 
 import { FC } from "react";
 interface Props {}
 
 const Cart: FC<Props> = () => {
   const overlay = useSelector((state: RootState) => state.overlay);
+  const count = useSelector((state: RootState) => state.counter);
   const totalPrice = useSelector(
     (state: RootState) => state.counter.totalPrice
   );
@@ -24,9 +27,12 @@ const Cart: FC<Props> = () => {
   const overlayStyle = overlay ? "block" : "hidden";
 
   function alertUser(): void {
-    return totalPrice > 0
-      ? alert("Thanks For Shopping With Us!! 😁😚")
-      : alert("Buy something will you?");
+    if (totalPrice > 0) {
+      dispatch(resetCart());
+      dispatch(toggleOverlay());
+      dispatch(resetAll());
+      alert("Thanks For Shopping With Us!! 😁😚");
+    } else alert("Buy something will you?");
   }
 
   function closeCart(): void {

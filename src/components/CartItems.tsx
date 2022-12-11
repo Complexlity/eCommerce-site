@@ -56,7 +56,7 @@ const Items: FC<Props> = ({ items }) => {
       </div>
       <div className="grid flex-1 gap-1 p-2 ">
         <h1>{name}</h1>
-        <p>{price}</p>
+        <p>${price}</p>
         <div className=" flex items-center justify-center gap-3 ">
           <button
             className="flex h-8 w-8 items-center justify-center rounded-md

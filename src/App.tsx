@@ -5,7 +5,7 @@ import Cart from "./components/Cart";
 
 function App() {
   return (
-    <div className="App   bg-orange-500 text-center">
+    <div className="App text-center">
       <Router>
         <Navbar />
         <Cart />

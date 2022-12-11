@@ -4,7 +4,6 @@ import { ShopItem } from '../interfaces'
 import shopJSON from '../store/shop.json'
 
 
-console.log(shopJSON)
 
 const initialState: ShopItem[] = shopJSON
 

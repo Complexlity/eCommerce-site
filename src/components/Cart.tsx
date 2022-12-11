@@ -18,21 +18,25 @@ const Cart: FC<Props> = () => {
   const body = document.querySelector("body")!;
   body.style.overflow = overlay ? "hidden" : "auto";
 
-  function alertUser() {
+  function alertUser(): void {
     return totalPrice > 0
       ? alert("Thanks For Shopping With Us!! 😁😚")
       : alert("Buy something will you?");
+  }
+
+  function closeCart(): void {
+    dispatch(toggleOverlay());
   }
   return (
     <>
       {overlay && (
         <div className="z-2 fixed inset-0  min-h-screen">
-          <div className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[80%]"></div>
-          <div className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[100%] dark:bg-gray-600 dark:text-gray-100 md:w-[60%]">
-            <div
-              className="absolute left-4 top-4"
-              onClick={() => dispatch(toggleOverlay())}
-            >
+          <div
+            className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[50%]"
+            onClick={closeCart}
+          ></div>
+          <div className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[80%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] md:w-[60%]">
+            <div className="absolute left-4 top-4" onClick={closeCart}>
               <GrClose size={"30"} />
             </div>
             <div className="mt-4">

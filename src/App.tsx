@@ -11,8 +11,8 @@ function App() {
     <div className={app}>
       <Router>
         <Navbar />
-        <Cart />
         <RouteSwitch />
+        <Cart />
       </Router>
     </div>
   );

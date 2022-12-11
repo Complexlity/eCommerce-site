@@ -23,7 +23,7 @@ const CartItems: FC = () => {
       {length == 0 ? (
         <div className="h-[10rem]"></div>
       ) : (
-        <ul className="mt-4 grid max-h-[calc(100vh-10rem)] gap-4 overflow-y-scroll p-2">
+        <ul className="mt-4 grid max-h-[calc(100vh-10rem)] gap-4 overflow-y-auto p-2">
           {cartItems.map((items) => {
             return <Items key={items.id} items={items} />;
           })}
@@ -59,8 +59,8 @@ const Items: FC<Props> = ({ items }) => {
         <p>${price}</p>
         <div className=" flex items-center justify-center gap-3 ">
           <button
-            className="flex h-8 w-8 items-center justify-center rounded-md
-          bg-gray-400"
+            className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-400 dark:bg-white dark:text-black
+          dark:hover:bg-gray-200"
             onClick={() => removeFromCart(items)}
           >
             -
@@ -68,7 +68,8 @@ const Items: FC<Props> = ({ items }) => {
           <p>{count}</p>
           <button
             onClick={() => addToCart(items)}
-            className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-400 pb-1"
+            className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-400 pb-1 dark:bg-white
+            dark:text-black dark:hover:bg-gray-200"
           >
             +
           </button>

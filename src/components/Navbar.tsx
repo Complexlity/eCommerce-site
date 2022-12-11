@@ -30,13 +30,13 @@ const Navbar = () => {
         {/* {!darkTheme && <AiFillGithub size={"2.5rem"} />} */}
       </div>
       <ul className="mx-auto flex items-center justify-end gap-2 xs:gap-4">
-        <li className="h-full  py-2 sm:px-2">
+        <li className="text-md h-full py-2 sm:px-2 sm:text-2xl">
           <Link to={"/"}>Home</Link>
         </li>
-        <li className="h-full  py-2  sm:px-2">
+        <li className="text-md  h-full py-2 sm:px-2  sm:text-2xl">
           <Link to={"/products"}>Products</Link>
         </li>
-        <li className="hover h-full  py-2  sm:px-2">
+        <li className="hover text-md  h-full py-2 sm:px-2 sm:text-2xl">
           <Link to={"/contact"}>Contact</Link>
         </li>
       </ul>

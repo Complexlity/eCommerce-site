@@ -29,14 +29,14 @@ const Navbar = () => {
         {/* {darkTheme && <VscGithub size={"2.5rem"} />} */}
         {/* {!darkTheme && <AiFillGithub size={"2.5rem"} />} */}
       </div>
-      <ul className="mx-auto flex items-center justify-end gap-2 xs:gap-4">
-        <li className="text-md h-full py-2 sm:px-2 sm:text-2xl">
+      <ul className="mx-auto flex flex-col items-center justify-end gap-2 xs:flex-row xs:gap-4">
+        <li className="text-md h-full xs:py-2 sm:px-2 sm:text-2xl">
           <Link to={"/"}>Home</Link>
         </li>
-        <li className="text-md  h-full py-2 sm:px-2  sm:text-2xl">
+        <li className="text-md  h-full xs:py-2 sm:px-2  sm:text-2xl">
           <Link to={"/products"}>Products</Link>
         </li>
-        <li className="hover text-md  h-full py-2 sm:px-2 sm:text-2xl">
+        <li className="hover text-md  h-full xs:py-2 sm:px-2 sm:text-2xl">
           <Link to={"/contact"}>Contact</Link>
         </li>
       </ul>
@@ -46,7 +46,11 @@ const Navbar = () => {
           onClick={() => dispatch(toggleOverlay())}
         >
           <Badge>
-            <AiOutlineShoppingCart cursor={"pointer"} height="100%" />
+            <AiOutlineShoppingCart
+              className="h-8 w-8"
+              cursor={"pointer"}
+              height="100%"
+            />
           </Badge>
           {count > 0 && (
             <span className="absolute bottom-[-.3rem] left-4 flex h-[1rem] w-[1rem]  items-center justify-center rounded-full bg-amber-500 text-xs  dark:bg-amber-500 dark:text-black">
@@ -57,7 +61,7 @@ const Navbar = () => {
         <div>
           {!darkTheme && (
             <BsFillSunFill
-              className="cursor-pointer text-blue-500"
+              className="h-8 w-8 cursor-pointer text-blue-500"
               onClick={toggleThemes}
             />
           )}

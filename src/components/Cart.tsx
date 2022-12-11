@@ -50,8 +50,8 @@ const Cart: FC<Props> = () => {
         <div className="absolute left-4 top-4" onClick={closeCart}>
           <GrClose size={"30"} />
         </div>
-        <div className="mt-4">
-          <h1 className="heading text-2xl">Your Shopping Cart</h1>
+        <div className="ml-4 mt-5 xs:ml-0 xs:mt-4">
+          <h1 className="heading text-xl xs:text-2xl">Your Shopping Cart</h1>
           <CartItems />
           <p className="mt-4">
             <span className="heading text-xl font-semibold">TOTAL</span>:

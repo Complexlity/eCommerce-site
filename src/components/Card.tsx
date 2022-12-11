@@ -9,7 +9,7 @@ const Card: FC<ShopItem> = (props) => {
       <div className=" h-[10rem] bg-gray-200 py-1 dark:bg-gray-400">
         <img
           className="mx-auto h-full object-contain"
-          src={`./src/assets/${image}`}
+          src={`../assets/${image}`}
           alt={name}
         />
       </div>

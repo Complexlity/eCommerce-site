@@ -20,9 +20,11 @@ const Home = () => {
             <br /> Shop with us or else..
           </p>
           <div className="float-button">
-            <Button variant="contained" size="large" endIcon={<SendIcon />}>
-              SHOP NOW
-            </Button>
+            <Link to="/products">
+              <Button variant="contained" size="large" endIcon={<SendIcon />}>
+                SHOP NOW
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="hero-section aspect-square h-[80%] w-full rounded-2xl "></div>

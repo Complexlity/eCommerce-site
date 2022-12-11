@@ -20,7 +20,12 @@ const Navbar = () => {
   return (
     <nav className="mx-auto flex items-center justify-between  border-b-[2px] border-gray-200 bg-gray-200 py-3 px-4 text-xl text-cyan-900 shadow-md dark:border-sky-800 dark:bg-cyan-900 dark:text-gray-300 md:text-2xl">
       <div className="sm:h-[2.5rem] sm:w-[2.5rem]">
-        <VscGithub className="h-full w-full" size={"2rem"} />
+        <a
+          href="https://github.com/Complexlity/eCommerce-site"
+          target={"_blank"}
+        >
+          <VscGithub className="h-full w-full" size={"2rem"} />
+        </a>
         {/* {darkTheme && <VscGithub size={"2.5rem"} />} */}
         {/* {!darkTheme && <AiFillGithub size={"2.5rem"} />} */}
       </div>

@@ -14,8 +14,12 @@ const Cart: FC<Props> = () => {
   );
 
   const dispatch = useDispatch();
+  document.body.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+  });
   const body = document.querySelector("body")!;
-  body.style.overflow = overlay ? "hidden" : "auto";
+  body.style.overflowX = "hidden";
+  body.style.overflowY = overlay ? "hidden" : "auto";
   const divStyle = overlay ? "open" : "closed";
 
   function alertUser(): void {

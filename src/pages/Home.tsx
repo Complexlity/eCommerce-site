@@ -4,11 +4,10 @@ import { AiOutlineSend as SendIcon } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const HeroImage = "../assets/1.png";
   return (
     <div className="homepage flex items-center justify-center overflow-hidden bg-gray-200 p-8 dark:bg-cyan-900">
       {/* Hero Section large Screen */}
-      <div className="mt-4 hidden h-full grid-cols-2 items-start justify-between gap-6 py-4 lg:grid">
+      <div className="mt-4 hidden h-full grid-cols-2 items-center justify-between gap-6 py-4 lg:grid">
         <div className="flex h-full flex-col items-center justify-center gap-12">
           <h1 className="mb-4 max-w-[15ch] text-5xl font-bold tracking-tighter dark:text-white md:text-6xl">
             Welcome To{" "}
@@ -20,7 +19,7 @@ const Home = () => {
             We Sell Quality And Variety.
             <br /> Shop with us or else..
           </p>
-          <div>
+          <div className="float-button">
             <Button variant="contained" size="large" endIcon={<SendIcon />}>
               SHOP NOW
             </Button>

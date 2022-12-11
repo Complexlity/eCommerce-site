@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../store/theme.js";
 import { toggleOverlay } from "../store/overlay.js";
 import { Badge } from "@mui/material";
+import { dark } from "@mui/material/styles/createPalette.js";
 
 const Navbar = () => {
   const count = useSelector((state: RootState) => state.counter.value);
@@ -14,6 +15,8 @@ const Navbar = () => {
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   const dispatch = useDispatch();
   const toggleThemes = () => dispatch(toggleTheme());
+  const value = darkTheme ? "80%" : "40%";
+  document.documentElement.style.setProperty("--brightness", value);
   return (
     <nav className="mx-auto flex items-center justify-between  border-b-[2px] border-gray-200 bg-gray-200 py-3 px-4 text-xl text-cyan-900 shadow-md dark:border-sky-800 dark:bg-cyan-900 dark:text-gray-300 md:text-2xl">
       <div className="sm:h-[2.5rem] sm:w-[2.5rem]">

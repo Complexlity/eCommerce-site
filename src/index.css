@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --brightness: 30%;
+}
+
 .hero-section {
   background: url("./assets/header-hero.jpg") no-repeat;
   background-size: 100% 100%;
-  filter: brightness(30%);
+  filter: brightness(var(--brightness));
 }
 
 .homepage {

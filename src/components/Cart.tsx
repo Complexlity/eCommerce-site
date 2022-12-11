@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/index.js";
 import { toggleOverlay } from "../store/overlay";
-import { incrementPrice, decrementPrice } from "../store/counterSlice.js";
 import { GrClose } from "react-icons/gr";
 import CartItems from "./CartItems.js";
+import { motion } from "framer-motion";
 
 import { FC } from "react";
 interface Props {}
@@ -35,7 +35,12 @@ const Cart: FC<Props> = () => {
             className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[50%]"
             onClick={closeCart}
           ></div>
-          <div className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] md:w-[60%]">
+          <motion.div
+            className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] md:w-[60%]"
+            initial={{ translateX: "100%" }}
+            animate={{ translateX: "0%" }}
+            transition={{ ease: "easeOut", duration: 1 }}
+          >
             <div className="absolute left-4 top-4" onClick={closeCart}>
               <GrClose size={"30"} />
             </div>
@@ -50,7 +55,7 @@ const Cart: FC<Props> = () => {
                 Checkout
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
     </>

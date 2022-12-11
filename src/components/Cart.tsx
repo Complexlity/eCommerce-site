@@ -21,6 +21,7 @@ const Cart: FC<Props> = () => {
   body.style.overflowX = "hidden";
   body.style.overflowY = overlay ? "hidden" : "auto";
   const divStyle = overlay ? "open" : "closed";
+  const opacityStyle = overlay ? "opacity-[50%]" : "opacity-0";
 
   function alertUser(): void {
     return totalPrice > 0
@@ -33,14 +34,13 @@ const Cart: FC<Props> = () => {
   }
   return (
     <>
-      {overlay && (
-        <div className="z-2 fixed inset-0  min-h-screen">
-          <div
-            className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[50%]"
-            onClick={closeCart}
-          ></div>
-        </div>
-      )}
+      <div
+        className={
+          opacityStyle +
+          " min-h- absolute inset-0 w-full bg-gray-800 opacity-[50%]"
+        }
+        onClick={closeCart}
+      ></div>
       <div
         className={
           divStyle +

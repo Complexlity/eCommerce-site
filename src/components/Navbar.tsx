@@ -14,7 +14,7 @@ const Navbar = () => {
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   const dispatch = useDispatch();
   const toggleThemes = () => dispatch(toggleTheme());
-  const value = darkTheme ? "80%" : "40%";
+  const value = darkTheme ? "75%" : "40%";
   document.documentElement.style.setProperty("--brightness", value);
   const linkStyle =
     "text-md h-full xs:py-2 sm:px-2 sm:text-2xl border-b-[1px] border-cyan-900 dark:border-gray-200";

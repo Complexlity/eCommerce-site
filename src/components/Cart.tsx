@@ -13,6 +13,7 @@ const Cart: FC<Props> = () => {
   const totalPrice = useSelector(
     (state: RootState) => state.counter.totalPrice
   );
+
   const dispatch = useDispatch();
   const body = document.querySelector("body")!;
   body.style.overflow = overlay ? "hidden" : "auto";
@@ -29,7 +30,7 @@ const Cart: FC<Props> = () => {
           <div className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[80%]"></div>
           <div className=" absolute top-0 right-0 min-h-full w-[80%] max-w-[400px] bg-white opacity-[100%] md:w-[60%]">
             <div
-              className="gleft-4 absolute top-4"
+              className="absolute left-4 top-4"
               onClick={() => dispatch(toggleOverlay())}
             >
               <GrClose size={"30"} />

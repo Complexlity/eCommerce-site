@@ -8,7 +8,6 @@ import {
   increment,
   incrementPrice,
 } from "../store/counterSlice.js";
-import longSleeve from "../assets/longSleeve.jpg";
 import { ShopItem } from "../interfaces.js";
 import { dividerClasses } from "@mui/material";
 

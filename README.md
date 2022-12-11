@@ -1,5 +1,7 @@
 # E-commerce Site
 
+[LIVE PREVIEW](https://complexlity-ecommerce-site.netlify.app/)
+
 ## Technologies
 - ReactJs
 - Typescript

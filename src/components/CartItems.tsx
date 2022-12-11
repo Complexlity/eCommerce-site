@@ -23,7 +23,7 @@ const CartItems: FC = () => {
       {length == 0 ? (
         <div className="h-[10rem]"></div>
       ) : (
-        <ul className="mt-4 grid gap-4 p-2">
+        <ul className="mt-4 grid max-h-[calc(100vh-10rem)] gap-4 overflow-y-scroll p-2">
           {cartItems.map((items) => {
             return <Items key={items.id} items={items} />;
           })}

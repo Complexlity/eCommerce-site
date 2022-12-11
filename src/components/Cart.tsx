@@ -45,9 +45,11 @@ const Cart: FC<Props> = () => {
               <GrClose size={"30"} />
             </div>
             <div className="mt-4">
-              <h1>Your Shopping Cart</h1>
+              <h1 className="heading text-2xl">Your Shopping Cart</h1>
               <CartItems />
-              <p>Total: ${totalPrice.toFixed(2)}</p>
+              <p>
+                Total:<span className="price"> ${totalPrice.toFixed(2)}</span>
+              </p>
               <button
                 onClick={alertUser}
                 className="mt-4 w-4/5 rounded-[5px] bg-orange-800 py-2 text-white"

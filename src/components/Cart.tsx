@@ -56,7 +56,10 @@ const Cart: FC<Props> = () => {
           <CartItems />
           <p className="mt-4">
             <span className="heading text-xl font-semibold">TOTAL</span>:
-            <span className="price text-2xl"> ${totalPrice.toFixed(2)}</span>
+            <span className="price text-2xl">
+              {" "}
+              ${parseFloat(totalPrice.toFixed(2))}
+            </span>
           </p>
           <button
             onClick={alertUser}

@@ -21,7 +21,10 @@ const CartItems: FC = () => {
   return (
     <>
       {length == 0 ? (
-        <div className="h-[10rem]"></div>
+        <div className="flex h-[10rem] items-center justify-center text-xl italic md:text-2xl">
+          {" "}
+          No items added
+        </div>
       ) : (
         <ul className="mt-4 grid max-h-[calc(100vh-15rem)] gap-4 overflow-y-auto p-2">
           {cartItems.map((items) => {

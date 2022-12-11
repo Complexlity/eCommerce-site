@@ -35,7 +35,7 @@ const Cart: FC<Props> = () => {
             className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[50%]"
             onClick={closeCart}
           ></div>
-          <div className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[80%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] md:w-[60%]">
+          <div className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] md:w-[60%]">
             <div className="absolute left-4 top-4" onClick={closeCart}>
               <GrClose size={"30"} />
             </div>

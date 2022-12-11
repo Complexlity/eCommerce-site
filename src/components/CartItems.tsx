@@ -52,7 +52,7 @@ const Items: FC<Props> = ({ items }) => {
   return (
     <li className="flex px-8">
       <div className="grid w-[40%] items-center justify-center">
-        <img className="h-[8rem]" src={`./src/assets/${image}`} alt="" />
+        <img className="h-[8rem]" src={`../assets/${image}`} alt="" />
       </div>
       <div className="grid flex-1 gap-1 p-2 ">
         <h1>{name}</h1>

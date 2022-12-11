@@ -49,7 +49,7 @@ const Navbar = () => {
             <AiOutlineShoppingCart cursor={"pointer"} height="100%" />
           </Badge>
           {count > 0 && (
-            <span className="absolute bottom-[-.3rem] left-4 flex h-[1rem] w-[1rem]  items-center justify-center rounded-full bg-red-500 text-xs dark:bg-red-700 dark:text-gray-200">
+            <span className="absolute bottom-[-.3rem] left-4 flex h-[1rem] w-[1rem]  items-center justify-center rounded-full bg-amber-500 text-xs  dark:bg-amber-500 dark:text-black">
               {count}
             </span>
           )}

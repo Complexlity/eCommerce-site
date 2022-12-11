@@ -3,7 +3,6 @@ import type { RootState } from "../store/index.js";
 import { toggleOverlay } from "../store/overlay";
 import { GrClose } from "react-icons/gr";
 import CartItems from "./CartItems.js";
-import { motion } from "framer-motion";
 
 import { FC } from "react";
 interface Props {}
@@ -17,6 +16,7 @@ const Cart: FC<Props> = () => {
   const dispatch = useDispatch();
   const body = document.querySelector("body")!;
   body.style.overflow = overlay ? "hidden" : "auto";
+  const divStyle = overlay ? "open" : "closed";
 
   function alertUser(): void {
     return totalPrice > 0
@@ -35,31 +35,32 @@ const Cart: FC<Props> = () => {
             className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[50%]"
             onClick={closeCart}
           ></div>
-          <motion.div
-            className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] md:w-[60%]"
-            initial={{ translateX: "100%" }}
-            animate={{ translateX: "0%" }}
-            transition={{ ease: "easeOut", duration: 1 }}
-          >
-            <div className="absolute left-4 top-4" onClick={closeCart}>
-              <GrClose size={"30"} />
-            </div>
-            <div className="mt-4">
-              <h1 className="heading text-2xl">Your Shopping Cart</h1>
-              <CartItems />
-              <p>
-                Total:<span className="price"> ${totalPrice.toFixed(2)}</span>
-              </p>
-              <button
-                onClick={alertUser}
-                className="mt-4 w-4/5 rounded-[5px] bg-orange-800 py-2 text-white"
-              >
-                Checkout
-              </button>
-            </div>
-          </motion.div>
         </div>
       )}
+      <div
+        className={
+          divStyle +
+          " cart absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] md:w-[60%]"
+        }
+      >
+        <div className="absolute left-4 top-4" onClick={closeCart}>
+          <GrClose size={"30"} />
+        </div>
+        <div className="mt-4">
+          <h1 className="heading text-2xl">Your Shopping Cart</h1>
+          <CartItems />
+          <p className="mt-4">
+            <span className="heading text-xl font-semibold">TOTAL</span>:
+            <span className="price text-2xl"> ${totalPrice.toFixed(2)}</span>
+          </p>
+          <button
+            onClick={alertUser}
+            className="mt-4 w-4/5 rounded-[5px] bg-green-900 py-2 text-white dark:text-gray-200"
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
     </>
   );
 };

@@ -21,6 +21,17 @@
   --brightness: 30%;
 }
 
+.cart {
+  transition: all ease-out 1s;
+}
+.open {
+  transform: translateX(0px);
+}
+
+.closed {
+  transform: translateX(100%);
+}
+
 nav,
 .heading {
   font-family: headerFont;
@@ -28,6 +39,8 @@ nav,
 
 .price {
   font-family: pricesFont;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .item-name {

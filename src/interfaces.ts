@@ -1,9 +1,12 @@
 export interface ShopItem {
-    name: string,
+    title: string,
     id: number,
-    price?: number
+    price: number
     image?: string
     count?: number
+    category?: string,
+    description?: string,
+    rating?: object
 }
 
 

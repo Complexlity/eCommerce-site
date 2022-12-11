@@ -13,15 +13,24 @@ interface Props {
   name: string;
   id: number;
   price: number;
+  image: string;
 }
 
-const Button: FC<Props> = ({ color, rounding, width, name, id, price }) => {
+const Button: FC<Props> = ({
+  color,
+  rounding,
+  width,
+  name,
+  id,
+  price,
+  image,
+}) => {
   const itemsList = useSelector((state: RootState) => state.cartList);
   const totalPrice = useSelector(
     (state: RootState) => state.counter.totalPrice
   );
   const dispatch = useDispatch();
-  const newItem: ShopItem = { name: name, id: id, price: price };
+  const newItem: ShopItem = { title: name, id, price, image };
 
   function addToCart(item: ShopItem): void {
     dispatch(addItem(item));

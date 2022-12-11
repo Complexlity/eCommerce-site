@@ -10,6 +10,7 @@ import { toggleOverlay } from "../store/overlay.js";
 const Navbar = () => {
   const count = useSelector((state: RootState) => state.counter.value);
   const overlay = useSelector((state: RootState) => state.overlay);
+  const body = document.querySelector("body")!;
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   const dispatch = useDispatch();
   const toggleThemes = () => dispatch(toggleTheme());
@@ -41,7 +42,10 @@ const Navbar = () => {
       <div className="flex items-center gap-2 sm:gap-6">
         <div
           className=" relative grid  items-center justify-center rounded-full p-1 hover:scale-[110%]  dark:text-amber-100"
-          onClick={() => dispatch(toggleOverlay())}
+          onClick={() => {
+            dispatch(toggleOverlay());
+            body.style.overflowY = "hidden";
+          }}
         >
           <AiOutlineShoppingCart
             className="h-8 w-8"

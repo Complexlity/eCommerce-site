@@ -18,7 +18,7 @@ const Cart: FC<Props> = () => {
     e.preventDefault();
   });
   const body = document.querySelector("body")!;
-  body.style.overflowX = "hidden";
+  // const html = document.querySelector("html")!;
   body.style.overflowY = overlay ? "hidden" : "auto";
   const divStyle = overlay ? "open" : "closed";
   const overlayStyle = overlay ? "block" : "hidden";

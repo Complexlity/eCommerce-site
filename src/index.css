@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+/* html,
 body {
   overflow-x: hidden;
-}
-body {
-  position: relative;
-}
+} */
 
 @font-face {
   font-family: pricesFont;
@@ -33,11 +30,13 @@ body {
   transition: all ease-out 1s;
 }
 .open {
-  transform: translateX(0px);
+  /* transform: translateX(0px); */
+  display: block;
 }
 
 .closed {
-  transform: translateX(100%);
+  /* transform: translateX(100%); */
+  display: none;
 }
 
 nav,

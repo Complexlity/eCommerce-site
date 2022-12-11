@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between py-3 px-4 text-2xl shadow-md">
       <div>
-        {/* <AiFillGithub /> */}
-        <VscGithub />
+        {!darkTheme && <AiFillGithub />}
+        {darkTheme && <VscGithub />}
       </div>
       <ul className="mx-auto flex items-center justify-end gap-4">
         <li className="h-full  py-2 px-2">

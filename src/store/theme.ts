@@ -1,12 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState: boolean = false
+const themeFromStorage = !!localStorage.getItem("darkTheme")
+const initialState: boolean = themeFromStorage
+
+
 
 export const themeSlice = createSlice({
     name: 'darkTheme',
     initialState,
     reducers: {
         toggleTheme: ((state: boolean) => {
+            if (!state) localStorage.setItem('darkTheme', "yes")
+            else localStorage.removeItem('darkTheme')
             return !state
         })
     }

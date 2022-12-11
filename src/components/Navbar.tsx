@@ -6,7 +6,6 @@ import type { RootState } from "../store/index.js";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../store/theme.js";
 import { toggleOverlay } from "../store/overlay.js";
-import { Badge } from "@mui/material";
 
 const Navbar = () => {
   const count = useSelector((state: RootState) => state.counter.value);
@@ -27,8 +26,6 @@ const Navbar = () => {
         >
           <VscGithub className="h-full w-full" />
         </a>
-        {/* {darkTheme && <VscGithub size={"2.5rem"} />} */}
-        {/* {!darkTheme && <AiFillGithub size={"2.5rem"} />} */}
       </div>
       <ul className="mx-auto flex flex-col items-center justify-end gap-1 xs:flex-row xs:gap-4">
         <li className={linkStyle}>

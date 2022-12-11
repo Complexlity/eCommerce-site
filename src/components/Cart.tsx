@@ -28,7 +28,7 @@ const Cart: FC<Props> = () => {
       {overlay && (
         <div className="z-2 fixed inset-0  min-h-screen">
           <div className=" min-h- absolute inset-0 w-full bg-gray-800 opacity-[80%]"></div>
-          <div className=" absolute top-0 right-0 min-h-full w-[80%] max-w-[400px] overflow-auto bg-white opacity-[100%] md:w-[60%]">
+          <div className=" absolute top-0 right-0 h-full w-[80%] max-w-[400px] bg-white opacity-[100%] md:w-[60%]">
             <div
               className="absolute left-4 top-4"
               onClick={() => dispatch(toggleOverlay())}

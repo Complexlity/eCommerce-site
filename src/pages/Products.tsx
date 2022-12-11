@@ -1,9 +1,14 @@
 import Cards from "../components/Cards";
+import { RootState } from "../store/index.js";
+import { useSelector } from "react-redux";
 
 const Products = () => {
+  const darkTheme = useSelector((state: RootState) => state.darkTheme);
   return (
-    <div className="mt-[2rem]">
-      <Cards />
+    <div className={darkTheme ? "dark" : ""}>
+      <div className="pt-[2rem] dark:bg-cyan-900">
+        <Cards />
+      </div>
     </div>
   );
 };

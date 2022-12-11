@@ -39,14 +39,13 @@ const Button: FC<Props> = ({
   }
 
   const style: any = {
-    backgroundColor: color,
     borderRadius: rounding,
     width: width,
   };
   return (
     <button
       style={style}
-      className="py-2  text-center hover:text-white hover:opacity-[80%]"
+      className="bg-yellow-500 py-2 text-center hover:text-white hover:opacity-[80%] dark:bg-yellow-600"
       onClick={() => {
         addToCart(newItem);
       }}

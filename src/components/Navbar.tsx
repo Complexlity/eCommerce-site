@@ -61,13 +61,13 @@ const Navbar = () => {
         <div>
           {!darkTheme && (
             <BsFillSunFill
-              className="h-8 w-8 cursor-pointer text-blue-500"
+              className="h-6 w-6 cursor-pointer text-blue-500"
               onClick={toggleThemes}
             />
           )}
           {darkTheme && (
             <BsMoonFill
-              className="scale-[90%] cursor-pointer text-amber-100"
+              className="h-6 w-6 scale-[90%] cursor-pointer text-amber-100"
               onClick={toggleThemes}
             />
           )}

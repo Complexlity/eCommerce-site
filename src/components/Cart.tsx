@@ -51,7 +51,7 @@ const Cart: FC<Props> = () => {
       <div
         className={
           divStyle +
-          " cart absolute inset-0 h-full  w-[100%] max-w-[600px] bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] xs:inset-auto xs:top-0 xs:right-0 xs:w-[80%] md:w-[65%]"
+          " cart absolute inset-0 h-full w-[100%]  max-w-[600px] overflow-hidden bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] xs:inset-auto xs:top-0 xs:right-0 xs:w-[80%] md:w-[65%]"
         }
       >
         <div className="absolute left-4 top-4" onClick={closeCart}>

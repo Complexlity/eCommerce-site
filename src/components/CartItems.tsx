@@ -8,8 +8,8 @@ import {
   increment,
   incrementPrice,
 } from "../store/counterSlice.js";
+
 import { ShopItem } from "../interfaces.js";
-import { dividerClasses } from "@mui/material";
 
 interface Props {
   items: ShopItem;
@@ -21,12 +21,12 @@ const CartItems: FC = () => {
   return (
     <>
       {length == 0 ? (
-        <div className="flex h-[10rem] items-center justify-center text-xl italic md:text-2xl">
+        <div className="flex h-[10rem] items-center justify-center overflow-hidden text-xl italic md:text-2xl">
           {" "}
           No items added
         </div>
       ) : (
-        <ul className="mt-4 grid max-h-[calc(100vh-10rem)] gap-4 overflow-y-auto p-2">
+        <ul className="cart-list mt-4 grid  gap-4 overflow-y-auto p-2">
           {cartItems.map((items) => {
             return <Items key={items.id} items={items} />;
           })}

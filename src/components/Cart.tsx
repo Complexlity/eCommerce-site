@@ -40,11 +40,13 @@ const Cart: FC<Props> = () => {
   }
   return (
     <>
-      {overlay && <div className="z-2 fixed inset-0  min-h-screen"></div>}
+      {overlay && (
+        <div className="z-2 fixed inset-0 min-h-screen  overflow-hidden"></div>
+      )}
       <div
         className={
           overlayStyle +
-          " absolute inset-0 min-h-screen w-full bg-gray-800 opacity-[50%]"
+          " absolute inset-0 min-h-screen w-full overflow-hidden bg-gray-800 opacity-[50%]"
         }
         onClick={closeCart}
       ></div>
@@ -57,7 +59,7 @@ const Cart: FC<Props> = () => {
         <div className="absolute left-4 top-4" onClick={closeCart}>
           <GrClose size={"30"} />
         </div>
-        <div className="ml-4 mt-4 xs:ml-0 xs:mt-4">
+        <div className="ml-4 mt-4 overflow-hidden xs:ml-0 xs:mt-4">
           <h1 className="heading text-xl xs:text-2xl">Your Shopping Cart</h1>
           <CartItems />
           <p className="mt-e">

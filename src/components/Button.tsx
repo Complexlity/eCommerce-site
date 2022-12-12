@@ -48,6 +48,7 @@ const Button: FC<Props> = ({
       className="bg-yellow-500 py-2 text-center hover:text-white hover:opacity-[80%] dark:bg-yellow-600"
       onClick={() => {
         addToCart(newItem);
+        alert("Item added. Go to cart to view all items");
       }}
     >
       Add To Cart

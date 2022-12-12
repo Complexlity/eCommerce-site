@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
 } */
 
+body {
+  position: relative;
+}
+
 @font-face {
   font-family: pricesFont;
   src: url("/assets/ConsertaDemoRegular-2znv.ttf");
@@ -62,6 +66,10 @@ nav,
 
 .homepage {
   height: calc(100vh - 70px);
+}
+
+.cart-list {
+  max-height: calc(100vh - 10rem);
 }
 
 .float-button {

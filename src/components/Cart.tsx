@@ -57,10 +57,10 @@ const Cart: FC<Props> = () => {
         <div className="absolute left-4 top-4" onClick={closeCart}>
           <GrClose size={"30"} />
         </div>
-        <div className="ml-4 mt-5 xs:ml-0 xs:mt-4">
+        <div className="ml-4 mt-4 xs:ml-0 xs:mt-4">
           <h1 className="heading text-xl xs:text-2xl">Your Shopping Cart</h1>
           <CartItems />
-          <p className="mt-4">
+          <p className="mt-e">
             <span className="heading text-xl font-semibold">TOTAL</span>:
             <span className="price text-2xl">
               {" "}
@@ -69,7 +69,7 @@ const Cart: FC<Props> = () => {
           </p>
           <button
             onClick={alertUser}
-            className="mt-4 w-4/5 rounded-[5px] bg-green-900 py-2 text-white dark:text-gray-200"
+            className="mt-3 w-4/5 rounded-[5px] bg-green-900 py-2 text-white dark:text-gray-200"
           >
             Checkout
           </button>

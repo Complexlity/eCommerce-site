@@ -44,7 +44,7 @@ const Cart: FC<Props> = () => {
       <div
         className={
           overlayStyle +
-          " min-h- absolute inset-0 w-full bg-gray-800 opacity-[50%]"
+          " absolute inset-0 min-h-screen w-full bg-gray-800 opacity-[50%]"
         }
         onClick={closeCart}
       ></div>

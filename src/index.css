@@ -68,10 +68,6 @@ nav,
   height: calc(100vh - 70px);
 }
 
-.cart-list {
-  max-height: calc(100vh - 10rem);
-}
-
 .float-button {
   animation: float 5s ease-in-out infinite;
 }

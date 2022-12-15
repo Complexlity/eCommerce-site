@@ -3,6 +3,7 @@
 [LIVE PREVIEW](https://complexlity-ecommerce-site.netlify.app/)
 
 ## Technologies
+
 - ReactJs
 - Typescript
 - Redux toolkit
@@ -11,6 +12,7 @@
 - Material UI
 
 ## Coming soon...
+
+- Add Back-To-Top Button
 - More Shop items
 - Improved User Interface
-

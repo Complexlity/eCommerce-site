@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Cart from "./components/Cart";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/index.js";
+import BackToTopButton from "./components/BackToTop";
 function App() {
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   const app = darkTheme ? "App dark text-center" : "App text-center";
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <RouteSwitch />
         <Cart />
+        <BackToTopButton />
       </Router>
     </div>
   );

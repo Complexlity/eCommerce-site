@@ -26,7 +26,7 @@ const CartItems: FC = () => {
           No items added
         </div>
       ) : (
-        <ul className="cart-list mt-4 grid max-h-[70vh]  gap-4 overflow-y-auto p-2">
+        <ul className="cart-list md:max-h-70vh mt-4 grid max-h-[60vh]  gap-4 overflow-y-auto p-2">
           {cartItems.map((items) => {
             return <Items key={items.id} items={items} />;
           })}

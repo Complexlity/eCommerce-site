@@ -6,7 +6,7 @@ const Products = () => {
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   return (
     <div className={darkTheme ? "dark" : ""}>
-      <div className="pt-[2rem] dark:bg-cyan-900">
+      <div className="px-4 pt-[2rem] dark:bg-cyan-900">
         <Cards />
       </div>
     </div>

@@ -19,7 +19,7 @@ const Navbar = () => {
   const linkStyle =
     "text-md h-full xs:py-2 sm:px-2 sm:text-2xl border-b-[1px] border-cyan-900 dark:border-gray-200";
   return (
-    <nav className="mx-auto flex items-center justify-between  border-b-[2px] border-gray-200 bg-gray-200 py-1 px-4 text-xl text-cyan-900 shadow-md dark:border-sky-800 dark:bg-cyan-900 dark:text-gray-300 xs:py-3 md:text-2xl">
+    <nav className="mx-auto flex items-center justify-between  border-b-[2px] border-gray-200 bg-gray-200 py-1 px-4 text-xl text-cyan-900 shadow-md dark:border-sky-800 dark:bg-cyan-900 dark:text-gray-300 xs:py-3 md:px-8 md:text-2xl">
       <div className="h-8 w-8 sm:h-[2.5rem] sm:w-[2.5rem]">
         <a
           href="https://github.com/Complexlity/eCommerce-site"

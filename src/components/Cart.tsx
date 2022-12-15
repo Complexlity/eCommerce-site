@@ -6,7 +6,7 @@ import CartItems from "./CartItems.js";
 import { resetCart } from "../store/cart.js";
 import { resetAll } from "../store/counterSlice.js";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 interface Props {}
 
 const Cart: FC<Props> = () => {
@@ -17,14 +17,25 @@ const Cart: FC<Props> = () => {
   );
 
   const dispatch = useDispatch();
-  document.body.addEventListener("touchstart", function (e) {
-    e.preventDefault();
-  });
+  // document.body.addEventListener("touchstart", function (e) {
+  //   e.preventDefault();
+  // });
   const body = document.querySelector("body")!;
-  // const html = document.querySelector("html")!;
-  body.style.overflowY = overlay ? "hidden" : "auto";
+  const html = document.querySelector("html")!;
+  // body.style.overflowY = overlay ? "hidden" : "auto";
   const divStyle = overlay ? "open" : "closed";
   const overlayStyle = overlay ? "block" : "hidden";
+
+  useEffect(() => {
+    if (overlay) {
+      body.style.position = "fixed";
+      // body.style.position = 'fixed'
+    } else {
+      body.style.position = "relative";
+      body.style.overflowY = "auto";
+      body.style.overflowX = "hidden";
+    }
+  }, [overlay]);
 
   function alertUser(): void {
     if (totalPrice > 0) {

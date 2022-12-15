@@ -7,6 +7,15 @@ body {
   overflow-x: hidden;
 } */
 
+/* html,
+body {
+  position: fixed;
+} */
+
+.App {
+  min-width: calc(100vw -10px) !important;
+}
+
 body {
   position: relative;
 }

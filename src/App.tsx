@@ -9,7 +9,7 @@ function App() {
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   const app = darkTheme ? "App dark text-center" : "App text-center";
   return (
-    <div className={app}>
+    <div className={`${app} mx-auto min-w-[100vw]`}>
       <Router>
         <Navbar />
         <RouteSwitch />

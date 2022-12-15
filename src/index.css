@@ -12,10 +12,6 @@ body {
   position: fixed;
 } */
 
-.App {
-  min-width: calc(100vw -10px) !important;
-}
-
 body {
   position: relative;
 }
@@ -74,7 +70,7 @@ nav,
 }
 
 .homepage {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 100px);
 }
 
 .float-button {

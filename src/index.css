@@ -91,3 +91,26 @@ nav,
     transform: translatey(0px);
   }
 }
+
+.pages {
+  position: relative;
+}
+
+.pages::after {
+  content: "";
+  position: absolute;
+  background-color: #164e63;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+.pages:hover:after {
+  width: 105%;
+}
+
+.dark .pages::after {
+  background-color: #e5e7eb;
+}

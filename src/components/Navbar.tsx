@@ -17,7 +17,7 @@ const Navbar = () => {
   const value = darkTheme ? "80%" : "40%";
   document.documentElement.style.setProperty("--brightness", value);
   const linkStyle =
-    "text-md h-full xs:py-2 sm:px-2 sm:text-2xl border-b-[1px] border-cyan-900 dark:border-gray-200";
+    "text-md h-full xs:py-2 sm:px-2 sm:text-2xl  border-cyan-900 dark:border-gray-200";
   return (
     <nav className="mx-auto flex items-center justify-between  border-b-[2px] border-gray-200 bg-gray-200 py-1 px-4 text-xl text-cyan-900 shadow-md dark:border-sky-800 dark:bg-cyan-900 dark:text-gray-300 xs:py-3 md:px-8 md:text-2xl">
       <div className="h-8 w-8 sm:h-[2.5rem] sm:w-[2.5rem]">
@@ -30,13 +30,19 @@ const Navbar = () => {
       </div>
       <ul className="mx-auto flex flex-col items-center justify-end gap-1 xs:flex-row xs:gap-4">
         <li className={linkStyle}>
-          <Link to={"/"}>Home</Link>
+          <Link to={"/"} className="pages">
+            Home
+          </Link>
         </li>
         <li className={linkStyle}>
-          <Link to={"/products"}>Products</Link>
+          <Link to={"/products"} className="pages">
+            Products
+          </Link>
         </li>
         <li className={linkStyle}>
-          <Link to={"/contact"}>Contact</Link>
+          <Link to={"/contact"} className="pages">
+            Contact
+          </Link>
         </li>
       </ul>
       <div className="flex items-center gap-2 sm:gap-6">

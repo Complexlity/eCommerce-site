@@ -103,8 +103,14 @@ nav,
   height: 2px;
   width: 0;
   left: 0;
-  bottom: -10px;
+  bottom: -4px;
   transition: 0.3s;
+}
+
+@media screen and (min-width: 500px) {
+  .pages::after {
+    bottom: -10px;
+  }
 }
 
 .pages:hover:after {

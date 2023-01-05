@@ -1,6 +1,6 @@
 # E-commerce Site
 
-[LIVE PREVIEW](https://complexlity-ecommerce-site.netlify.app/)
+[LIVE PREVIEW](https://e-commerce-site-alpha.vercel.app/)
 
 ## Technologies
 
@@ -13,6 +13,6 @@
 
 ## Coming soon...
 
-- Add Back-To-Top Button
+- Add Back-To-Top Button ✅
 - More Shop items
 - Improved User Interface

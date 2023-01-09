@@ -9,7 +9,7 @@ import {
   incrementPrice,
 } from "../store/counterSlice.js";
 
-import { ShopItem } from "../interfaces.js";
+import { ShopItem } from "../interfaces/shopItem.js";
 
 interface Props {
   items: ShopItem;

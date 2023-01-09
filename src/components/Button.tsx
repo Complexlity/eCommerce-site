@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/index.js";
 import { addItem } from "../store/cart.js";
 import { increment, incrementPrice } from "../store/counterSlice.js";
-import { store } from "../store/index.js";
-import { ShopItem } from "../interfaces.js";
+import { ShopItem } from "../interfaces/shopItem.js";
 
 interface Props {
   color: string;

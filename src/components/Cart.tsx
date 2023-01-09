@@ -61,7 +61,10 @@ const Cart: FC<Props> = () => {
           " cart absolute inset-0 h-full w-[100%]  max-w-[600px] overflow-hidden bg-white opacity-[90%] dark:bg-gray-600 dark:text-gray-100 dark:opacity-[95%] xs:inset-auto xs:top-0 xs:right-0 xs:w-[80%] md:w-[65%]"
         }
       >
-        <div className="absolute left-4 top-4" onClick={closeCart}>
+        <div
+          className="absolute left-4 top-4 cursor-pointer"
+          onClick={closeCart}
+        >
           <GrClose size={"30"} />
         </div>
         <div className="ml-4 mt-4 overflow-hidden xs:ml-0 xs:mt-4">

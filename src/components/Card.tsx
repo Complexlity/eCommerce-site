@@ -1,9 +1,9 @@
-import { FC} from "react";
-import { ShopItem } from "../interfaces";
+import { FC } from "react";
+import { ShopItem } from "../interfaces/shopItem.js";
 import Button from "./Button";
 
 const Card: FC<ShopItem> = (props) => {
-  const { title: name, id, image, price: price } = props;
+  const { title: name, id, image, price } = props;
   return (
     <div className="flex flex-col overflow-hidden rounded-md border-2 border-gray-400 dark:text-gray-200">
       <div className=" h-[10rem] bg-gray-200 py-1 dark:bg-gray-400">
@@ -25,7 +25,7 @@ const Card: FC<ShopItem> = (props) => {
             width="100%"
             name={name}
             id={id}
-            price={price!}
+            price={price}
             image={image!}
           />
         </div>

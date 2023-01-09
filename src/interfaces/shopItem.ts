@@ -9,6 +9,3 @@ export interface ShopItem {
     rating?: object
 }
 
-
-// export type ShopItem = string
-

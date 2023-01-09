@@ -1,35 +1,29 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/index.js";
-import { toggleOverlay } from "../store/overlay";
+import { toggleOverlay } from "../store/slices/overlaySlice";
 import { GrClose } from "react-icons/gr";
 import CartItems from "./CartItems.js";
-import { resetCart } from "../store/cart.js";
-import { resetAll } from "../store/counterSlice.js";
+import { resetCart } from "../store/slices/cartSlice.js";
+import { resetAll } from "../store/slices/counterSlice.js";
 
 import { FC, useEffect } from "react";
 interface Props {}
 
 const Cart: FC<Props> = () => {
   const overlay = useSelector((state: RootState) => state.overlay);
-  const count = useSelector((state: RootState) => state.counter);
   const totalPrice = useSelector(
     (state: RootState) => state.counter.totalPrice
   );
 
   const dispatch = useDispatch();
-  // document.body.addEventListener("touchstart", function (e) {
-  //   e.preventDefault();
-  // });
   const body = document.querySelector("body")!;
   const html = document.querySelector("html")!;
-  // body.style.overflowY = overlay ? "hidden" : "auto";
   const divStyle = overlay ? "open" : "closed";
   const overlayStyle = overlay ? "block" : "hidden";
 
   useEffect(() => {
     if (overlay) {
       body.style.position = "fixed";
-      // body.style.position = 'fixed'
     } else {
       body.style.position = "relative";
       body.style.overflowY = "auto";

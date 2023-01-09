@@ -1,15 +1,14 @@
 import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/index.js";
-import { addItem, removeItem } from "../store/cart";
+import { addItem, removeItem } from "../store/slices/cartSlice";
+import { ShopItem } from "../interfaces/shopItem.js";
 import {
   decrement,
   decrementPrice,
   increment,
   incrementPrice,
-} from "../store/counterSlice.js";
-
-import { ShopItem } from "../interfaces/shopItem.js";
+} from "../store/slices/counterSlice.js";
 
 interface Props {
   items: ShopItem;
@@ -38,18 +37,18 @@ const CartItems: FC = () => {
 
 const Items: FC<Props> = ({ items }) => {
   const dispatch = useDispatch();
-  const { title: name, id, price, count, image } = items;
+  const { title: name, price, count, image } = items;
 
   function addToCart(item: ShopItem): void {
     dispatch(addItem(item));
     dispatch(increment());
-    dispatch(incrementPrice(item.price!));
+    dispatch(incrementPrice(item.price));
   }
 
   function removeFromCart(item: ShopItem): void {
     dispatch(removeItem(item));
     dispatch(decrement());
-    dispatch(decrementPrice(item.price!));
+    dispatch(decrementPrice(item.price));
   }
 
   return (

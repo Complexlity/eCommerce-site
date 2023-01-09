@@ -1,21 +1,20 @@
 import { Link } from "react-router-dom";
-import { AiOutlineShoppingCart, AiFillGithub } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
 import { VscGithub } from "react-icons/vsc";
 import type { RootState } from "../store/index.js";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../store/theme.js";
-import { toggleOverlay } from "../store/overlay.js";
+import { toggleTheme } from "../store/slices/themeSlice.js";
+import { toggleOverlay } from "../store/slices/overlaySlice.js";
 
 const Navbar = () => {
   const count = useSelector((state: RootState) => state.counter.value);
-  const overlay = useSelector((state: RootState) => state.overlay);
   const body = document.querySelector("body")!;
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   const dispatch = useDispatch();
   const toggleThemes = () => dispatch(toggleTheme());
-  const value = darkTheme ? "80%" : "40%";
-  document.documentElement.style.setProperty("--brightness", value);
+  const brightnessValue = darkTheme ? "80%" : "40%";
+  document.documentElement.style.setProperty("--brightness", brightnessValue);
   const linkStyle =
     "text-md h-full xs:py-2 sm:px-2 sm:text-2xl  border-cyan-900 dark:border-gray-200";
   return (

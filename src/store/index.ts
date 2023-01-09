@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import CartReducer from './cart.js'
-import CounterReducer from './counterSlice.js'
-import ShopItems from './shop.js'
-import Overlay from './overlay.js'
-import themeSlice from './theme.js'
+import CartReducer from './slices/cartSlice.js'
+import CounterReducer from './slices/counterSlice.js'
+import ShopItems from './slices/shopSlice.js'
+import Overlay from './slices/overlaySlice.js'
+import themeSlice from './slices/themeSlice.js'
 export const store = configureStore({
   reducer: {
     counter: CounterReducer,

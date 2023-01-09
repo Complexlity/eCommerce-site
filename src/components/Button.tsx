@@ -1,8 +1,7 @@
 import { FC } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../store/index.js";
-import { addItem } from "../store/cart.js";
-import { increment, incrementPrice } from "../store/counterSlice.js";
+import { useDispatch } from "react-redux";
+import { addItem } from "../store/slices/cartSlice.js";
+import { increment, incrementPrice } from "../store/slices/counterSlice.js";
 import { ShopItem } from "../interfaces/shopItem.js";
 
 interface Props {
@@ -15,19 +14,7 @@ interface Props {
   image: string;
 }
 
-const Button: FC<Props> = ({
-  color,
-  rounding,
-  width,
-  name,
-  id,
-  price,
-  image,
-}) => {
-  const itemsList = useSelector((state: RootState) => state.cartList);
-  const totalPrice = useSelector(
-    (state: RootState) => state.counter.totalPrice
-  );
+const Button: FC<Props> = ({ rounding, width, name, id, price, image }) => {
   const dispatch = useDispatch();
   const newItem: ShopItem = { title: name, id, price, image };
 
@@ -37,7 +24,7 @@ const Button: FC<Props> = ({
     dispatch(incrementPrice(item.price!));
   }
 
-  const style: any = {
+  const style: { borderRadius: string; width?: string } = {
     borderRadius: rounding,
     width: width,
   };

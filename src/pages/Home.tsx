@@ -30,6 +30,7 @@ const Home = () => {
         </div>
         <div className="hero-section aspect-square h-[80%] w-full rounded-2xl "></div>
       </div>
+
       {/* Hero secton Smll screen */}
       <div className="overflow-none relative flex h-full w-full flex-col items-center justify-center gap-8 opacity-[90%] xs:w-[90%] lg:hidden">
         <div className="hero-section absolute inset-0 z-[-1000] xs:rounded-lg"></div>

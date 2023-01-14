@@ -1,3 +1,4 @@
+// Creates a blue print of what a shop item object should
 export interface ShopItem {
     title: string,
     id: number,
@@ -6,6 +7,5 @@ export interface ShopItem {
     count?: number
     category?: string,
     description?: string,
-    rating?: object
 }
 

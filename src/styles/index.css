@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html,
-body {
-  overflow-x: hidden;
-} */
-
-/* html,
-body {
-  position: fixed;
-} */
-
 body {
   position: relative;
 }
@@ -39,12 +29,10 @@ body {
   transition: all ease-out 1s;
 }
 .open {
-  /* transform: translateX(0px); */
   display: block;
 }
 
 .closed {
-  /* transform: translateX(100%); */
   display: none;
 }
 

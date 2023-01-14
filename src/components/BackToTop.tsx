@@ -1,9 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-interface Props {}
-
-const BackToTopButton: FC<Props> = () => {
+// This components takes the page to beginning when scrolling
+const BackToTopButton = () => {
   const [backToTopButton, setBackToTopButton] = useState(false);
+
+  // Makes the browser listen for scroll events and changes the back button state
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -12,6 +13,7 @@ const BackToTopButton: FC<Props> = () => {
     });
   }, []);
 
+  // Moves the window position to the top
   const scrollUp = () => {
     window.scrollTo({
       top: 0,

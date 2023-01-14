@@ -1,13 +1,17 @@
+// Gets React SVG icons. See https://react-icons.github.io/react-icons/
 import { AiFillGithub } from "react-icons/ai";
 import { FaFacebookF } from "react-icons/fa";
 import { BsYoutube, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { RootState } from "../store/index.js";
 import { GoLocation } from "react-icons/go";
+
+// Redux function and interface to read date from state
 import { useSelector } from "react-redux";
+import { RootState } from "../store/index.js";
 
 const Contact = () => {
+  // Reads the current theme state from the store. See src/store/themeSlice.ts
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
-  const color = darkTheme ? "white" : "#164e63";
+  const color = darkTheme ? "white" : "#164e63"; // Updates the colors accordingly from the state theme data
   const iconStyle = "h-8 w-8 sm:h-12 sm:w-12 md:w-20 md:h-20";
   return (
     <div className="homepage contact-page flex flex-col justify-start gap-24 bg-gray-200 pt-32 dark:bg-cyan-900">

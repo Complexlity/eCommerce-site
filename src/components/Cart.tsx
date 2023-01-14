@@ -1,15 +1,20 @@
+/*----------------------------------
+Redux Functions. See https://redux-toolkit.js.org/tutorials/quick-start for more information 
+------------------------------------ */
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../store/index.js";
-import { toggleOverlay } from "../store/slices/overlaySlice";
-import { GrClose } from "react-icons/gr";
-import CartItems from "./CartItems.js";
+import type { RootState } from "../store/index.js"; // State interface
+
+// Redux slices. See src/store for more information
+import { toggleOverlay } from "../store/slices/overlaySlice.js";
 import { resetCart } from "../store/slices/cartSlice.js";
 import { resetAll } from "../store/slices/counterSlice.js";
 
-import { FC, useEffect } from "react";
-interface Props {}
+import CartItems from "./CartItems.js"; // See CartItems.js for more information
+import { GrClose } from "react-icons/gr"; // Close icon
+import { useEffect } from "react";
 
-const Cart: FC<Props> = () => {
+const Cart = () => {
+  // Creates the state from the current redux store values
   const overlay = useSelector((state: RootState) => state.overlay);
   const totalPrice = useSelector(
     (state: RootState) => state.counter.totalPrice
@@ -17,10 +22,10 @@ const Cart: FC<Props> = () => {
 
   const dispatch = useDispatch();
   const body = document.querySelector("body")!;
-  const html = document.querySelector("html")!;
   const divStyle = overlay ? "open" : "closed";
   const overlayStyle = overlay ? "block" : "hidden";
 
+  // Changes the overflow when cart is open. This is more directed towards an error I had on safari mobile with the cart
   useEffect(() => {
     if (overlay) {
       body.style.position = "fixed";
@@ -31,6 +36,7 @@ const Cart: FC<Props> = () => {
     }
   }, [overlay]);
 
+  // Function to give message when the user checks out. This could be re-written to do something more interactive
   function alertUser(): void {
     if (totalPrice > 0) {
       dispatch(resetCart());
@@ -40,6 +46,7 @@ const Cart: FC<Props> = () => {
     } else alert("Buy something will you?");
   }
 
+  // Function to close the cart
   function closeCart(): void {
     dispatch(toggleOverlay());
   }

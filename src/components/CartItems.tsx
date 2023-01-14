@@ -1,8 +1,14 @@
+// Gettting Functional component type
 import { FC } from "react";
+
+/*--------------------------------
+Redux Functions to read and update state. See https://redux-toolkit.js.org/tutorials/quick-start for more information about redux functions used in this code
+------------------------------- */
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/index.js";
+
+// Redux slices. See src/store for more information
 import { addItem, removeItem } from "../store/slices/cartSlice";
-import { ShopItem } from "../interfaces/shopItem.js";
 import {
   decrement,
   decrementPrice,
@@ -10,11 +16,10 @@ import {
   incrementPrice,
 } from "../store/slices/counterSlice.js";
 
-interface Props {
-  items: ShopItem;
-}
-
+// Shop items interfaces. See src/interfaces for more information
+import { ShopItem } from "../interfaces/shopItem.js";
 const CartItems: FC = () => {
+  // Gets the current state of the cart items from the store. See src/store/cartSlice.js for more information
   const cartItems = useSelector((state: RootState) => state.cartList);
   const length = cartItems.length;
   return (
@@ -35,16 +40,25 @@ const CartItems: FC = () => {
   );
 };
 
-const Items: FC<Props> = ({ items }) => {
-  const dispatch = useDispatch();
-  const { title: name, price, count, image } = items;
+interface Props {
+  items: ShopItem;
+}
 
+// This returns a single cart items. It recieves a shop item as prop
+const Items: FC<Props> = ({ items }) => {
+  //Create function to update state data
+  const dispatch = useDispatch();
+
+  const { title: name, price, count, image } = items; // Destructure state data into variables
+
+  // This function adds a new item to the cart store. See src/store/cartSlice.ts and src/store/counterSlice.ts for more information
   function addToCart(item: ShopItem): void {
     dispatch(addItem(item));
     dispatch(increment());
     dispatch(incrementPrice(item.price));
   }
 
+  // This function removes an item from the cart store. See src/store/cartSlice.ts and src/store/counterSlice.ts for more information
   function removeFromCart(item: ShopItem): void {
     dispatch(removeItem(item));
     dispatch(decrement());

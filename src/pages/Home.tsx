@@ -1,6 +1,10 @@
-import { Button } from "@mui/material";
-import { FC } from "react";
+// React Icon. See https://react-icons.github.io/react-icons/
 import { AiOutlineSend as SendIcon } from "react-icons/ai";
+
+// Material UI button component. See https://mui.com/material-ui/react-button/
+import { Button } from "@mui/material";
+
+// Special function to perform client-side navigation
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -42,7 +46,8 @@ const Home = () => {
 
 export default Home;
 
-const TextContent: FC = () => {
+// This component only helps for responsiveness of the homepage
+const TextContent = () => {
   return (
     <>
       <h1 className="text-3xl font-bold tracking-tighter text-white dark:text-gray-200 xs:mb-4 xs:text-5xl md:text-6xl">

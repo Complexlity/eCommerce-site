@@ -1,22 +1,36 @@
+// Function used for client side routing between pages
 import { Link } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
-import { VscGithub } from "react-icons/vsc";
-import type { RootState } from "../store/index.js";
+
+// Redux functions to read and update the store state. See https://redux-toolkit.js.org/tutorials/quick-start for more information about redux functions used in this code
 import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../store/index.js";
+
+// Getting the slice functions. See src/store/themeSlice.js as well as src/store/overlaySlice.js for more information
 import { toggleTheme } from "../store/slices/themeSlice.js";
 import { toggleOverlay } from "../store/slices/overlaySlice.js";
 
+// React Icons. See https://react-icons.github.io/react-icons/ for more information
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
+import { VscGithub } from "react-icons/vsc";
+
 const Navbar = () => {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const body = document.querySelector("body")!;
-  const darkTheme = useSelector((state: RootState) => state.darkTheme);
+  const count = useSelector((state: RootState) => state.counter.value); // Used to show the number on the cart icon
+  const darkTheme = useSelector((state: RootState) => state.darkTheme); // Reads theme data from redux store
+
+  // Creates a function to update the theme value from the store. See src/store/themeSlice.ts
   const dispatch = useDispatch();
   const toggleThemes = () => dispatch(toggleTheme());
+
+  // Updates the value of the css root variable based on the current theme. See src/styles/index.css for the usage of this variable
   const brightnessValue = darkTheme ? "80%" : "40%";
   document.documentElement.style.setProperty("--brightness", brightnessValue);
+
+  // Creates custom tailwind styling to apply to each to the links
   const linkStyle =
     "text-md h-full xs:py-2 sm:px-2 sm:text-2xl  border-cyan-900 dark:border-gray-200";
+
+  const body = document.querySelector("body")!; // Gets the body element which is later used to remove overflow when the cart is open
   return (
     <nav className="mx-auto flex items-center justify-between  border-b-[2px] border-gray-200 bg-gray-200 py-1 px-4 text-xl text-cyan-900 shadow-md dark:border-sky-800 dark:bg-cyan-900 dark:text-gray-300 xs:py-3 md:px-8 md:text-2xl">
       <div className="h-8 w-8 sm:h-[2.5rem] sm:w-[2.5rem]">

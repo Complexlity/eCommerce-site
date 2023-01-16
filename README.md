@@ -1,18 +1,45 @@
-# E-commerce Site
+# e-Commerce Website
 
-[LIVE PREVIEW](https://e-commerce-site-alpha.vercel.app/)
+Online store application with key shopping site features
+[Live Demo](https://complexlity-ecommerce-site.vercel.app/) :point_left:
 
-## Technologies
+## Features
 
-- ReactJs
-- Typescript
+- Theming (Light and Dark mode)
+- Client-side routing
+- Add items to cart
+- Remove items from cart
+- Update prices accordingly
+
+## Technologies used
+
+- JavaScript
+- React
 - Redux toolkit
-- Tailwindcss
-- React Icons
-- Material UI
+- React-router
+- React-icons
+- Material-UI
+- TailwindCSS
 
-## Coming soon...
+## Geting started
 
-- Add Back-To-Top Button ✅
-- More Shop items
-- Improved User Interface
+### Clone repository
+
+```
+git clone https://github.com/Complexlity/eCommerce-site.git
+cd eCommerce-site
+```
+
+### Install dependencies
+
+```
+npm install
+```
+
+### Start Application
+
+```
+npm  run dev
+```
+
+Open the link show on the terminal in a browser (Usually `http://localhost:5173`)
